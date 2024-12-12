@@ -1,0 +1,4 @@
+2.0.1-cuda11.7-cudnn8-devel
+
+# docker pull pytorch/pytorch:2.0.1-cuda11.7-cudnn8-devel
+# https://hub.docker.com/r/pytorch/pytorch/tags?name=2.0.1
