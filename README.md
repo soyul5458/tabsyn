@@ -230,7 +230,7 @@ Note: the optimal DCR score depends on the ratio between #Train and #Holdout (# 
 #### Detection: Classifier Two Sample Tests (C2ST)
 
 ```
-python eval/eval_detection.py --dataname [NAME_OF_DATASET] --model [METHOD_NAME] --path [PATH_TO_SYNTHETIC_DATA]
+python eval/eval_detection.py --dataname [NAME_OF_DATASET] --model [METHOD_NAME]
 ```
 
 #### Missing Value Imputation for the Target Column
