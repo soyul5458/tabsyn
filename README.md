@@ -164,15 +164,17 @@ python main.py --dataname [NAME_OF_DATASET] --method [NAME_OF_BASELINE_METHODS] 
 
 Options of [NAME_OF_DATASET]: adult, default, shoppers, magic, beijing, news
 Options of [NAME_OF_BASELINE_METHODS]: smote, goggle, great, stasy, codi, tabddpm
-
+stasy, codi 에러 발생
 For Tabsyn, use the following command for training:
 
 ```
 # train VAE first
 python main.py --dataname [NAME_OF_DATASET] --method vae --mode train
+python main.py --dataname adult --method vae --mode train
 
 # after the VAE is trained, train the diffusion model
 python main.py --dataname [NAME_OF_DATASET] --method tabsyn --mode train
+python main.py --dataname adult --method tabsyn --mode train
 ```
 
 ## Tabular Data Synthesis
@@ -187,6 +189,7 @@ For Tabsyn, use the following command for synthesis:
 
 ```
 python main.py --dataname [NAME_OF_DATASET] --method tabsyn --mode sample --save_path [PATH_TO_SAVE]
+python main.py --dataname adult --method tabsyn --mode sample --save_path synthetic/adult/tabsyn.csv
 
 ```
 
