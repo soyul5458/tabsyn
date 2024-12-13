@@ -163,9 +163,9 @@ python main.py --dataname [NAME_OF_DATASET] --method [NAME_OF_BASELINE_METHODS] 
 ```
 
 Options of [NAME_OF_DATASET]: adult, default, shoppers, magic, beijing, news
-Options of [NAME_OF_BASELINE_METHODS]: smote, goggle, great, stasy, codi, tabddpm
-stasy, codi 에러 발생
-For Tabsyn, use the following command for training:
+Options of [NAME_OF_BASELINE_METHODS]: smote, goggle, great, stasy, codi, tabddpm  
+stasy, codi 에러 발생  
+For Tabsyn, use the following command for training:  
 
 ```
 # train VAE first
