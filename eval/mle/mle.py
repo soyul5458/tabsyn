@@ -204,7 +204,8 @@ def feat_transform(data, info, label_encoder = None, encoders = None, cmax = Non
             if encoder:
                 feature = encoder.transform(col)
             else:
-                encoder = OneHotEncoder(sparse=False, handle_unknown='ignore')
+                # Added in version 1.2: sparse was renamed to sparse_output
+                encoder = OneHotEncoder(sparse_output=False, handle_unknown='ignore')
                 encoders[idx] = encoder
                 feature = encoder.fit_transform(col)
                 
@@ -294,7 +295,8 @@ class FeatureMaker:
                     if encoder:
                         feature = encoder.transform(col)
                     else:
-                        encoder = OneHotEncoder(sparse=False, handle_unknown='ignore')
+                        # Added in version 1.2: sparse was renamed to sparse_output 
+                        encoder = OneHotEncoder(sparse_output=False, handle_unknown='ignore')
                         self.encoders[index] = encoder
                         feature = encoder.fit_transform(col)
 
