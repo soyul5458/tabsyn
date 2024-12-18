@@ -19,6 +19,15 @@ parser = argparse.ArgumentParser(description='Missing Value Imputation for the T
 parser.add_argument('--dataname', type=str, default='adult', help='Name of dataset.')
 parser.add_argument('--gpu', type=int, default=0, help='GPU index.')
 
+
+# sy 아래 코드 추가함. (오류 메세지)
+'''
+  File "/disk1/syh19/tabsyn/impute.py", line 68, in <module>
+    epoch = args.epoch
+AttributeError: 'Namespace' object has no attribute 'epoch'
+'''
+parser.add_argument('--epoch', type=int, default=10, help='Number of epochs for training')
+
 args = parser.parse_args()
 
 # check cuda
