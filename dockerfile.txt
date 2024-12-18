@@ -2,3 +2,12 @@
 
 # docker pull pytorch/pytorch:2.0.1-cuda11.7-cudnn8-devel
 # https://hub.docker.com/r/pytorch/pytorch/tags?name=2.0.1
+
+
+
+The goggle model issue is because of the mismatch between the version of the pytorch and the pytorch used for building GraphBolt.  
+
+pytorch/pytorch_2.2.1-cuda12.1-cudnn8-devel
+(Note that somehow a similar image pytorch/pytorch_2.2.1-cuda12.1-cudnn8-runtime still have the graphbolt problem)
+After that just pip from http, and it works for me
+!pip install dgl -f https://data.dgl.ai/wheels/torch-2.2/cu121/repo.html
