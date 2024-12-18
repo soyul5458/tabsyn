@@ -1,0 +1,32 @@
+python main.py --dataname adult --method great --mode train
+python main.py --dataname adult --method codi --mode train
+python main.py --dataname adult --method goggle --mode train --gpu 2
+python main.py --dataname adult --method tabddpm --mode train
+python main.py --dataname adult --method great --mode train
+
+
+# train VAE first
+python main.py --dataname adult --method vae --mode train
+
+# after the VAE is trained, train the diffusion model
+python main.py --dataname adult --method tabsyn --mode train
+
+
+python main.py --dataname [NAME_OF_DATASET] --method [NAME_OF_BASELINE_METHODS] --mode sample --save_path [PATH_TO_SAVE]
+
+python main.py --dataname adult --method tabsyn --mode sample --save_path [PATH_TO_SAVE]
+python main.py --dataname adult --method tabsyn --mode sample --save_path synthetic/adult/tabsyn.csv
+
+
+
+python eval/eval_density.py --dataname adult --model tabsyn --path synthetic/adult/tabsyn.csv
+python eval/eval_quality.py --dataname adult --model tabsyn --path synthetic/adult/tabsyn.csv
+
+python eval/eval_mle.py --dataname adult --model tabsyn --path synthetic/adult/tabsyn.csv
+python eval/eval_dcr.py --dataname adult --model tabsyn --path synthetic/adult/tabsyn.csv
+
+python eval/eval_detection.py --dataname adult --model tabsyn
+
+python impute.py --dataname adult 
+
+python eval_impute.py --dataname adult
