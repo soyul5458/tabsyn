@@ -87,7 +87,7 @@ Install other dependencies
 pip install -r requirements.txt
 ```
 
-Install dependencies for GOGGLE
+Install dependencies for GOGGLE (버전 missmatch로 오류 발생.. 해결 인되는중.. 실행하기 위해서는 전체 도커를 다른 버전으로 해야함)
 
 ```
 pip install  dgl -f https://data.dgl.ai/wheels/cu117/repo.html
